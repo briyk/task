@@ -13,8 +13,11 @@ function addInput(event) {
 
      newInput.style.position = "absolute";
      newInput.style.width = `${newInput.offsetWidth + 50}px`;
-     newInput.style.left = `${event.offsetX}px`;
-     newInput.style.top = `${event.offsetY}px`;
+     const parentRect = event.target.getBoundingClientRect();
+     const leftPercentage = (event.offsetX / parentRect.width) * 100;
+     const topPercentage = (event.offsetY / parentRect.height) * 100;
+     newInput.style.left = `${leftPercentage}%`;
+     newInput.style.top = `${topPercentage}%`;
 
      // =============== Drag Functions
      let isDragging = false;
@@ -29,9 +32,9 @@ function addInput(event) {
 
      newInput.addEventListener("mousemove", (event) => {
           if (isDragging) {
-               newInput.style.left = `${event.clientX - startX}px`;
-               newInput.style.top = `${event.clientY - startY}px`;
-          }
+               newInput.style.left = `${((event.clientX - startX) / image.clientWidth) * 100}%`;
+               newInput.style.top = `${((event.clientY - startY) / image.clientHeight) * 100}%`;
+           }
      });
 
      newInput.addEventListener("mouseup", () => {
@@ -76,6 +79,7 @@ function addValue() {
 
      currentInput.style.border = "none"
      currentInput.style.background = "none"
+
 }
 
 // ============= double click to create input , enter to add input to table 

@@ -1,7 +1,7 @@
 .image-container {
-  position: relative;
-}
-
+     position: relative;
+   }
+ 
 .form-control {
   width: auto;
   max-width: 100%;
@@ -25,17 +25,19 @@ tbody tr input {
   background: none;
 }
 
+.input-img {
+     position: absolute;
+     font-size: 16px;
+   }
 
 
 @media screen and (max-width: 992px) {
   .input-img {
     font-size: 14px;
+  
   }
 }
 
-
    
-   .input-img {
-     position: absolute;
-     font-size: 16px;
-   }
+  
+   
