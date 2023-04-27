@@ -1,0 +1,41 @@
+.image-container {
+  position: relative;
+}
+
+.form-control {
+  width: auto;
+  max-width: 100%;
+}
+
+.input-container input {
+  width: 50px;
+  padding: 10px;
+}
+
+.image-container img {
+  object-fit: contain;
+  width: 100%;
+}
+
+tbody tr input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+  background: none;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .input-img {
+    font-size: 14px;
+  }
+}
+
+
+   
+   .input-img {
+     position: absolute;
+     font-size: 16px;
+   }
